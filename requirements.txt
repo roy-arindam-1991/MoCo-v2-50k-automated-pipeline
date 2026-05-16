@@ -1,0 +1,33 @@
+# Core
+torch>=2.1.0
+torchvision>=0.16.0
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Data I/O
+h5py>=3.9.0          # HDF5 storage for CT slice stacks
+tifffile>=2023.7.10  # read TIFF stacks from micro-CT scanners
+Pillow>=10.0.0
+
+# Image processing (rule-based masking pipeline)
+scikit-image>=0.21.0   # Otsu thresholding, morphological ops, marching cubes
+opencv-python>=4.8.0   # Gaussian / median blur, connected components
+
+# Deep learning utilities
+timm>=0.9.0            # pretrained ResNet-50 weights
+
+# Dimensionality reduction / visualisation
+umap-learn>=0.5.3      # UMAP for feature space visualisation
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Configuration
+pyyaml>=6.0
+
+# Mesh I/O
+numpy-stl>=3.0.0       # STL mesh read/write
+trimesh>=3.23.0        # mesh processing and watertight checks
+
+# Utilities
+tqdm>=4.65.0
+pandas>=2.0.0
