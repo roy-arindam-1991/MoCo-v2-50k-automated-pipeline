@@ -1,6 +1,6 @@
 # masking/
 
-Deterministic rule-based pipeline to generate coarse binary bone masks from CT slices.  
+Deterministic rule-based pipeline to generate coarse binary bone masks from CT slices.
 No training required — fully reproducible with fixed parameters.
 
 ## Pipeline Stages
@@ -16,10 +16,9 @@ No training required — fully reproducible with fixed parameters.
 | File | Description |
 |---|---|
 | `rule_based_masking.py` | Full 5-stage deterministic masking pipeline |
-| `run_masking.sh` | Applies masking across all U-Net partition datasets |
 
 ## Usage
 
 ```bash
-bash scripts/03_generate_masks.sh
+bash bash_scripts/03_mocov2_validation.sh
 ```
