@@ -18,7 +18,7 @@
 ## Usage
 
 ```bash
-bash scripts/05_run_inference.sh
+bash bash_scripts/05_run_inference.sh
 ```
 
 ## Output

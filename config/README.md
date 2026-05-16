@@ -16,16 +16,18 @@ image_size: 224
 normalise: true
 z_standardise: true
 
-# SimCLR
-simclr_epochs: 250
-simclr_batch_size: 64
-simclr_lr: 3.0e-4
-simclr_temperature: 0.5
+# MoCo v2
+mocov2_epochs: 600
+mocov2_batch_size: 128
+mocov2_lr: 0.015
+mocov2_temperature: 0.07
+mocov2_queue_size: 8192
+mocov2_momentum: 0.999
 
 # U-Net
 unet_epochs: 500
-unet_optimiser: AdamW
-unet_scheduler: OneCycleLR
+unet_optimiser: Adam
+unet_scheduler: cosine
 
 # Mesh
 marching_cubes_iso: 0.5
