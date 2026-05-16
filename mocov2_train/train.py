@@ -99,7 +99,7 @@ class H5SliceDataset(Dataset):
 # ===========================
 # Augmentations & MoCo Model
 # ===========================
-def get_srxtm_augmentation(size=224):
+def get_CT_augmentation(size=224):
     return transforms.Compose([
         transforms.Resize((size, size)),
         transforms.Grayscale(num_output_channels=3),
@@ -165,17 +165,17 @@ class MoCo(nn.Module):
 # ===========================
 def find_latest_checkpoint(output_dir):
     if not os.path.exists(output_dir): return None, 0
-    checkpoint_files = [f for f in os.listdir(output_dir) if "srxtm_moco_r50_e" in f and f.endswith(".pth")]
+    checkpoint_files = [f for f in os.listdir(output_dir) if "CT_moco_r50_e" in f and f.endswith(".pth")]
     if not checkpoint_files: return None, 0
     epochs = [int(re.findall(r'\d+', f)[0]) for f in checkpoint_files]
     latest_epoch = max(epochs)
-    latest_file = os.path.join(output_dir, f"srxtm_moco_r50_e{latest_epoch}.pth")
+    latest_file = os.path.join(output_dir, f"CT_moco_r50_e{latest_epoch}.pth")
     return latest_file, latest_epoch
 
 def setup_logger(output_dir):
     log_dir = os.path.join(output_dir, "log")
     os.makedirs(log_dir, exist_ok=True)
-    log_file = os.path.join(log_dir, f"srxtm_moco_log_{time.strftime('%Y%m%d-%H%M%S')}.txt")
+    log_file = os.path.join(log_dir, f"CT_moco_log_{time.strftime('%Y%m%d-%H%M%S')}.txt")
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s",
                         handlers=[logging.FileHandler(log_file), logging.StreamHandler()])
     return log_file
@@ -194,7 +194,7 @@ def save_metrics_plot(train_losses, train_accs, output_dir):
     plt.xlabel('Epoch'); plt.ylabel('Accuracy')
     plt.grid(True, linestyle='--', alpha=0.6); plt.legend()
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, "srxtm_moco_r50_metrics.svg"), format='svg')
+    plt.savefig(os.path.join(output_dir, "CT_moco_r50_metrics.svg"), format='svg')
     plt.close()
 
 def train_one_epoch(model, dataloader, optimizer, epoch, args):
@@ -217,7 +217,7 @@ def train_one_epoch(model, dataloader, optimizer, epoch, args):
     return total_loss / len(dataloader), top1_correct / total_samples
 
 def train_moco(args):
-    transform = get_srxtm_augmentation()
+    transform = get_CT_augmentation()
     dataset = H5SliceDataset(args.h5_file, transform=transform)
     loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True, 
                         num_workers=args.num_workers, drop_last=True, pin_memory=True)
@@ -249,7 +249,7 @@ def train_moco(args):
         save_metrics_plot(train_losses, train_accs, args.output_dir)
         
         if (epoch + 1) % 10 == 0:
-            checkpoint_file = os.path.join(args.output_dir, f"srxtm_moco_r50_e{epoch+1}.pth")
+            checkpoint_file = os.path.join(args.output_dir, f"CT_moco_r50_e{epoch+1}.pth")
             torch.save({
                 'state_dict': model.state_dict(),
                 'optimizer': optimizer.state_dict(),
