@@ -1,6 +1,11 @@
 # DEEPCTSEG: MoCo-v2-50k-automated-pipeline (50k)
 
-[![License: Restricted Academic](https://img.shields.io/badge/License-Restricted%20Academic-red.svg)](LICENSE) [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/) [![PyTorch](https://img.shields.io/badge/PyTorch-2.1.2-EE4C2C.svg)](https://pytorch.org/) [![Platform](https://img.shields.io/badge/HPC-BlueBear%20%7C%20A100-7B2FBE.svg)](https://www.birmingham.ac.uk/research/arc/bear) [![Pipeline](https://img.shields.io/badge/Pipeline-MoCo%20v2%20%E2%86%92%20U--Net-00B4D8.svg)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/blob/main) [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/blob/main)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.1.2-EE4C2C.svg)](https://pytorch.org/)
+[![Platform](https://img.shields.io/badge/HPC-BlueBear%20%7C%20A100-7B2FBE.svg)](https://www.birmingham.ac.uk/research/arc/bear)
+[![Pipeline](https://img.shields.io/static/v1?label=Pipeline&message=MoCo+v2+to+U-Net&color=00B4D8)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/tree/main)
+[![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/tree/main)
 
 ---
 
@@ -19,7 +24,7 @@ A fully automated, annotation-free pipeline for semantic segmentation of fossil 
 3. **Knowledge fusion into a modified U-Net** to refine coarse masks into high-precision segmentation overlays
 4. **3D mesh generation** via marching cubes for downstream morphometric analysis
 
-The pipeline reduces per-specimen processing from ~100 person-hours to **1--3 minutes** at inference.
+The pipeline reduces per-specimen processing from ~100 person-hours to **1–3 minutes** at inference.
 
 ---
 
@@ -186,7 +191,7 @@ Raw CT TIFF Slices
 |            (CloudCompare v2)            |
 |                                         |
 |  PPR > manual landmarking               |
-|  ICP > rigid alignment (scale = 1.0)   |
+|  ICP > rigid alignment (scale = 1.0)    |
 |  C2C > signed distance analysis         |
 |                                         |
 |  External specimens validated           |
@@ -244,15 +249,16 @@ Training data: 50,626 CT images from the Middle Jurassic Kilmaluag Formation, Sk
 Trained on a single **NVIDIA A100 GPU** via BlueBear HPC (University of Birmingham).
 
 | Stage | Time |
-|---|---|
+| --- | --- |
 | MoCo v2 pre-training (600 epochs) | ~7.8 hrs |
 | MoCo v2 validation (Grad-CAM + UMAP) | ~4 min |
 | U-Net training (500 epochs) | ~6 hrs 10 min |
 | Peak GPU memory | ~3.26 GB |
-| Mesh generation per specimen | 1--3 min |
+| Mesh generation per specimen | 1–3 min |
 
 ---
 
 ## License
 
-This project is licensed under the **Restricted Academic Licence + CC BY-NC-ND 4.0 — All rights reserved. See [LICENSE](LICENSE) for full terms.
+This project is licensed under the **GNU General Public License v3.0** — see [LICENSE](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/blob/main/LICENSE) for full terms.
+All derivative works must remain open-source under GPL-3.0.
