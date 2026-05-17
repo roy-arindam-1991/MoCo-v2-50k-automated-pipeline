@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/badge/HPC-BlueBear%20%7C%20A100-7B2FBE.svg)](https://www.birmingham.ac.uk/research/arc/bear)
 [![Pipeline](https://img.shields.io/static/v1?label=Pipeline&message=MoCo+v2+to+U-Net&color=00B4D8)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/tree/main)
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/tree/main)
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20255058.svg)](https://doi.org/10.5281/zenodo.20255058)
 ---
 
 ## Pipeline Developers
