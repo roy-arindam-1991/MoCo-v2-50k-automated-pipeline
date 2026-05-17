@@ -1,6 +1,6 @@
 # DEEPCTSEG: MoCo-v2-50k-automated-pipeline (50k)
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE) [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/) [![PyTorch](https://img.shields.io/badge/PyTorch-2.1.2-EE4C2C.svg)](https://pytorch.org/) [![Platform](https://img.shields.io/badge/HPC-BlueBear%20%7C%20A100-7B2FBE.svg)](https://www.birmingham.ac.uk/research/arc/bear) [![Pipeline](https://img.shields.io/badge/Pipeline-MoCo%20v2%20%E2%86%92%20U--Net-00B4D8.svg)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/blob/main) [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/blob/main)
+[![License: Restricted Academic](https://img.shields.io/badge/License-Restricted%20Academic-red.svg)](LICENSE) [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/) [![PyTorch](https://img.shields.io/badge/PyTorch-2.1.2-EE4C2C.svg)](https://pytorch.org/) [![Platform](https://img.shields.io/badge/HPC-BlueBear%20%7C%20A100-7B2FBE.svg)](https://www.birmingham.ac.uk/research/arc/bear) [![Pipeline](https://img.shields.io/badge/Pipeline-MoCo%20v2%20%E2%86%92%20U--Net-00B4D8.svg)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/blob/main) [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/roy-arindam-1991/MoCo-v2-50k-automated-pipeline/blob/main)
 
 ---
 
@@ -255,5 +255,4 @@ Trained on a single **NVIDIA A100 GPU** via BlueBear HPC (University of Birmingh
 
 ## License
 
-This project is licensed under the **GNU General Public License v3.0** - see [LICENSE](LICENSE) for full terms.
-All derivative works must remain open-source under GPL-3.0.
+This project is licensed under the **Restricted Academic Licence + CC BY-NC-ND 4.0 — All rights reserved. See [LICENSE](LICENSE) for full terms.
